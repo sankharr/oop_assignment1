@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/sankharr/Dropbox/Practice/Clion/oop_assignment1/test.cpp
+/home/sankharr/Dropbox/Practice/Clion/oop_assignment1/main.cpp
+iomanip
+-
 iostream
 -
-fstream
+sstream
 -
 

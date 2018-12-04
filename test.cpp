@@ -1,29 +1,36 @@
-#include<iostream>
-#include<fstream>
+#include <sstream>
+#include <string>
+#include <fstream>
+#include <iostream>
 
-using namespace std;
+int main(){
 
-int main() {
+    int count = 0;
 
-    ifstream infile("subjdata.txt");
-    int a,b;
-    while(infile >> a >> b){
-        cout << a << " - " << b;
+    using namespace std;
+    istringstream iss("17001439 67");    //this code portion split up a string into different strings using spaces
+    string s;
+    while ( getline( iss, s, ' ' ) ) {
+        int x = stoi(s.c_str());
+        printf( "`%d'\n", x );
     }
 
-//    ifstream myReadFile;
-//    myReadFile.open("subjdata.txt");
-//    char output[100];
-//    if (myReadFile.is_open()) {
-//        while (!myReadFile.eof()) {
+//    FILE* fp = fopen("subjdata.txt", "r");    //reading from a text file
+//    if (fp == NULL)
+//        exit(EXIT_FAILURE);
 //
+//    char* line = NULL;
+//    size_t len = 0;
+//    while ((getline(&line, &len, fp)) != -1) {
+//        // using printf() in all tests for consistency
+//        printf("%s", line);
 //
-//            myReadFile >> output;
-//            cout<<output;
-//
-//
-//        }
 //    }
-//    myReadFile.close();
+//    fclose(fp);
+//    if (line)
+//        free(line);
+//
+//    std::cout << "\n\ncount is - " << count;
+
     return 0;
 }

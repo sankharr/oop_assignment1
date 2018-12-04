@@ -3,5 +3,4 @@ project(oop_assignment1)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(oop_assignment1
-        test.cpp)
+add_executable(oop_assignment1 main.cpp)

@@ -12,14 +12,15 @@ int loop_count;
 int index_mark = 0;
 int str_int;
 string s_code;
-//int next_slot = 0;
 int n_students = 0;
 int main_count_increment = 0;
 int sub_array_size = 10; //if you change the value here, you have to change the value in subject_struct as well.
+int main_array_size = 20;
 
 struct student{
     int student_id;
     int student_mark;
+    char grade;
 };
 
 struct subject_struct{         //if this method doesnt work, you can declare a details array with a constant number of elements. so ones you exceeded that number,
@@ -30,30 +31,55 @@ struct subject_struct{         //if this method doesnt work, you can declare a d
 
 struct subject_struct subject_array[20];
 
-class subject{
-private:
-public:
-//    void readingFromText();
-//    void storingData();
-//    void displaySubject();
-//    void splitting_strings(string);
-};
+//class subject{
+//private:
+//public:
+//
+//};
 
-void storingData();
-//void storingData();
-void displaySubject();
+void storingData();                     //function prototypes
 void splitting_strings(string);
+void gradeAllocation();
+
+void gradeAllocation(){
+
+    for(int main_number = 0; main_number < 20; main_number++){
+
+        for(int sub_number = 0; sub_number < sub_array_size; sub_number++){
+
+            int mark = subject_array[main_number].details_array[sub_number].student_mark;
+
+            if(mark == 0)           //if there's an empty slot in the array, it will get skipped by this.
+                continue;
+
+            if(70 <= mark){
+                subject_array[main_number].details_array[sub_number].grade = 'A';
+            }
+
+            else if(55 <= mark && mark < 70){
+                subject_array[main_number].details_array[sub_number].grade = 'B';
+            }
+
+            else if(40 <= mark && mark < 55){
+                subject_array[main_number].details_array[sub_number].grade = 'C';
+            }
+
+            else if(30 <= mark && mark < 40){
+                subject_array[main_number].details_array[sub_number].grade = 'D';
+            }
+
+            else if(mark < 30){
+                subject_array[main_number].details_array[sub_number].grade = 'F';
+            }
+        }
+    }
+}
 
 void splitting_strings(string str) {
-    //using namespace std;
+
     istringstream iss(str);    //this code portion split up a string into different strings using spaces
     string s;
     while (getline(iss, s, ' ')) {
-        //printf( "`%s'\n", s.c_str() );
-        //str_int = atoi(s.c_str());
-//        if(sub_count >= 10){
-//            n_students = n_students - 10
-//        }
 
         if (s[0] == 'S') {
 
@@ -99,12 +125,7 @@ void splitting_strings(string str) {
 
             subject_array[main_count].subject_code = s_code;
             subject_array[main_count].num_students = n_students;         //  <--------this needs to be corrected.
-//            if (after_s == 1) {
-//
-//                loop_count = str_int;
-//                subject_array[main_count+(sub_count/10)].num_students = str_int;
-//                after_s = 0;
-//            }
+
             if (index_mark == 0) {
                 subject_array[main_count].details_array[sub_count % sub_array_size].student_id = str_int;
                 index_mark = 1;
@@ -123,9 +144,8 @@ void splitting_strings(string str) {
 }
 
 void storingData() {
-    int line_count = 1;         //for debugging purposes
 
-    //int sub_count = 0;
+    int line_count = 1;         //for debugging purposes
 
     FILE* fp = fopen("subjdata.txt", "r");    //reading from a text file
     if (fp == NULL)
@@ -134,30 +154,21 @@ void storingData() {
     char* line = NULL;
     size_t len = 0;
     while ((getline(&line, &len, fp)) != -1) {
-        // using printf() in all tests for consistency
-        //printf("%s", line);
-//        if(line[0]=='S'){
-//            count = 0;
-//        }
-//        //else if{index_mark){
-//
-//        }
+
         splitting_strings(line);
-        line_count++;
+        line_count++;       //for debugging purposes
 
     }
+
     fclose(fp);
     if (line)
         free(line);
+
 }
 
-
-
-//void subject::displaySubject() {
-//    cin >>
-//}
 int main() {
     storingData();
+    gradeAllocation();
     cout << "Hello, World!" << endl;
 
     return 0;

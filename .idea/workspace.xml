@@ -11,13 +11,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fab2662-41ec-424d-b765-c0ae6d7f2362" name="Default Changelist" comment="storingData function is ok now. it now works for different sizes of sub arrays as well.&#10;(line 101) subject_array[main_count].num_students needs to be corrected">
+    <list default="true" id="9fab2662-41ec-424d-b765-c0ae6d7f2362" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/test.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/test.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/oop_assignment1" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/oop_assignment1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="130" column="14" selection-start-line="130" selection-start-column="14" selection-end-line="130" selection-end-column="14" />
+            <state relative-caret-position="671">
+              <caret line="191" column="5" lean-forward="true" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -72,6 +70,11 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>20</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -161,7 +164,7 @@
       <workItem from="1543767178992" duration="27984000" />
       <workItem from="1543855277384" duration="1198000" />
       <workItem from="1543886769517" duration="20970000" />
-      <workItem from="1543916105813" duration="1434000" />
+      <workItem from="1543916105813" duration="8537000" />
     </task>
     <task id="LOCAL-00001" summary="added a second prinf line just after the first one">
       <created>1543768194573</created>
@@ -177,36 +180,50 @@
       <option name="project" value="LOCAL" />
       <updated>1543800372530</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="storingData function is ok now. it now works for different sizes of sub arrays as well.&#10;(line 101) subject_array[main_count].num_students needs to be corrected">
+      <created>1543917551547</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1543917551547</updated>
+    </task>
+    <task id="LOCAL-00004" summary="gradeAllocation function added.">
+      <created>1543921474693</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1543921474693</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51586000" />
+    <option name="totallyTimeSpent" value="58689000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978261" visible="true" weight="0.12326574" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978261" weight="0.12326574" />
       <window_info id="Structure" order="1" sideWeight="0.5021739" side_tool="true" weight="0.12059765" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32899022" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.8849077" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.32899022" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32899022" />
-      <window_info anchor="bottom" id="CMake" order="12" weight="0.32899022" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.78827363" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" />
+      <window_info anchor="bottom" id="Database Changes" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32899022" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32899022" />
+      <window_info anchor="bottom" id="CMake" order="11" weight="0.32899022" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Debug" order="4" visible="true" weight="0.22038421" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -288,14 +305,15 @@
     <MESSAGE value="added a second prinf line just after the first one" />
     <MESSAGE value="added a subjdata.txt file and made some changes in main.cpp" />
     <MESSAGE value="storingData function is ok now. it now works for different sizes of sub arrays as well.&#10;(line 101) subject_array[main_count].num_students needs to be corrected" />
-    <option name="LAST_COMMIT_MESSAGE" value="storingData function is ok now. it now works for different sizes of sub arrays as well.&#10;(line 101) subject_array[main_count].num_students needs to be corrected" />
+    <MESSAGE value="gradeAllocation function added." />
+    <option name="LAST_COMMIT_MESSAGE" value="gradeAllocation function added." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>159</line>
+          <line>197</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -303,16 +321,16 @@
           <line>8</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>160</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
         <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <condition expression="line_count &gt;= 22" language="ObjectiveC" />
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>144</line>
+          <line>158</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>198</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <breakpoint type="OCSymbolicBreakpointType">
           <properties>
@@ -448,8 +466,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="130" column="14" selection-start-line="130" selection-start-column="14" selection-end-line="130" selection-end-column="14" />
+        <state relative-caret-position="671">
+          <caret line="191" column="5" lean-forward="true" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

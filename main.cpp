@@ -16,6 +16,7 @@ int n_students = 0;
 int main_count_increment = 0;
 int sub_array_size = 10; //if you change the value here, you have to change the value in subject_struct as well.
 int main_array_size = 20;
+int option;
 
 struct student{
     int student_id;
@@ -166,10 +167,52 @@ void storingData() {
 
 }
 
+void displaySubject(){
+
+    int found = 0;
+    string sub_code;
+    cout << "Enter the subject code - ";
+    cin >> sub_code;
+    cout << "\nIndex Number\tMark\tGrade\n\n";
+
+    for(int i = 0; i < 20; i++){
+
+        if(subject_array[i].subject_code == sub_code){
+            found = 1;
+            for(int j = 0; j < sub_array_size; j++){
+                if(subject_array[i].details_array[j].student_id == 0)
+                    continue;
+                cout << "  " << subject_array[i].details_array[j].student_id << "       " << subject_array[i].details_array[j].student_mark << "       " << subject_array[i].details_array[j].grade << "\n";
+            }
+        }
+    }
+
+    if (found == 0){
+        cout << "No results found\n";
+    }
+
+}
+
 int main() {
+
     storingData();
     gradeAllocation();
+    displaySubject();
     cout << "Hello, World!" << endl;
+
+//    do{
+//
+//        cout << "1.Display Subject\n";
+//
+//        cout << "Enter your option - ";
+//        cin >> option;
+//
+//        switch (option){
+//            case 1:
+//                displaySubject();
+//        }
+//
+//    }while(option!=5);
 
     return 0;
 }

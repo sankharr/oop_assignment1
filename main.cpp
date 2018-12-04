@@ -1,6 +1,7 @@
 #include <iomanip>
 #include <iostream>
 #include <sstream>
+#include <zconf.h>
 
 using namespace std;
 
@@ -41,6 +42,7 @@ struct subject_struct subject_array[20];
 void storingData();                     //function prototypes
 void splitting_strings(string);
 void gradeAllocation();
+void displaySubject();
 
 void gradeAllocation(){
 
@@ -193,11 +195,49 @@ void displaySubject(){
 
 }
 
+void displayStudent(){
+
+    int found = 0;
+    int str_int;
+
+    string stud_id;
+    cout << "Enter the Student ID - ";
+    //cin >> stud_id;
+    stud_id = "17000004";
+
+    stringstream geek(stud_id);
+    geek >> str_int;
+    cout << "\nYear - " << "20"<< stud_id[0] << stud_id[1] << "\n\n Subject      Mark    Grade\n\n";
+
+    for(int i = 0; i < 20; i++){
+
+            for(int j = 0; j < sub_array_size; j++){
+
+                if(subject_array[i].details_array[j].student_id == str_int){
+
+                    cout << " " << subject_array[i].subject_code << "       " << subject_array[i].details_array[j].student_mark << "       " << subject_array[i].details_array[j].grade << "\n";
+                    found = 1;
+                }
+            }
+    }
+
+    cout << "\n";
+
+    if (found == 0){
+        cout << "No results found\n";
+    }
+
+}
+
 int main() {
 
     storingData();
     gradeAllocation();
-    displaySubject();
+
+
+    //displaySubject();
+    displayStudent();
+
     cout << "Hello, World!" << endl;
 
 //    do{

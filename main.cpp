@@ -11,6 +11,11 @@ int after_s = 0;
 int loop_count;
 int index_mark = 0;
 int str_int;
+string s_code;
+//int next_slot = 0;
+int n_students = 0;
+int main_count_increment = 0;
+int sub_array_size = 10; //if you change the value here, you have to change the value in subject_struct as well.
 
 struct student{
     int student_id;
@@ -20,7 +25,7 @@ struct student{
 struct subject_struct{         //if this method doesnt work, you can declare a details array with a constant number of elements. so ones you exceeded that number,
     string subject_code;
     int num_students;
-    struct student details_array[20];
+    struct student details_array[10];
 };
 
 struct subject_struct subject_array[20];
@@ -46,21 +51,28 @@ void splitting_strings(string str) {
     while (getline(iss, s, ' ')) {
         //printf( "`%s'\n", s.c_str() );
         //str_int = atoi(s.c_str());
+//        if(sub_count >= 10){
+//            n_students = n_students - 10
+//        }
 
         if (s[0] == 'S') {
 
             sub_count = 0;
             main_count++;
             subject_array[main_count].subject_code = s;
+            s_code = s;
             after_s = 1;
 
         }
-        else{
+        else if(sub_count < sub_array_size){
+
             stringstream geek(s);
             geek >> str_int;
+
             if (after_s == 1) {
                 loop_count = str_int;
                 subject_array[main_count].num_students = str_int;
+                n_students = str_int;
                 after_s = 0;
             }
             else if (index_mark == 0) {
@@ -70,7 +82,40 @@ void splitting_strings(string str) {
             else if (index_mark == 1) {
                 subject_array[main_count].details_array[sub_count].student_mark = str_int;
                 index_mark = 0;
+                if(sub_count == (sub_array_size - 1)){
+                    main_count_increment = 1;
+                }
                 sub_count++;
+
+            }
+        }
+        else{
+            stringstream geek(s);
+            geek >> str_int;
+            if(main_count_increment == 1 && sub_count % sub_array_size == 0){
+                main_count = main_count+1;
+                main_count_increment = 2;
+            }
+
+            subject_array[main_count].subject_code = s_code;
+            subject_array[main_count].num_students = n_students;         //  <--------this needs to be corrected.
+//            if (after_s == 1) {
+//
+//                loop_count = str_int;
+//                subject_array[main_count+(sub_count/10)].num_students = str_int;
+//                after_s = 0;
+//            }
+            if (index_mark == 0) {
+                subject_array[main_count].details_array[sub_count % sub_array_size].student_id = str_int;
+                index_mark = 1;
+            }
+            else if (index_mark == 1) {
+                subject_array[main_count].details_array[sub_count % sub_array_size].student_mark = str_int;
+                index_mark = 0;
+                sub_count++;
+                if(sub_count % sub_array_size == 0){
+                    main_count_increment = 1;
+                }
             }
         }
 
@@ -78,7 +123,7 @@ void splitting_strings(string str) {
 }
 
 void storingData() {
-
+    int line_count = 1;         //for debugging purposes
 
     //int sub_count = 0;
 
@@ -98,6 +143,7 @@ void storingData() {
 //
 //        }
         splitting_strings(line);
+        line_count++;
 
     }
     fclose(fp);

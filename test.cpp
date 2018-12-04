@@ -5,15 +5,16 @@
 
 int main(){
 
-    int count = 0;
+    int count = 24/10;
+    printf("%d\n",count);
 
-    using namespace std;
-    istringstream iss("17001439 67");    //this code portion split up a string into different strings using spaces
-    string s;
-    while ( getline( iss, s, ' ' ) ) {
-        int x = stoi(s.c_str());
-        printf( "`%d'\n", x );
-    }
+//    using namespace std;
+//    istringstream iss("17001439 67");    //this code portion split up a string into different strings using spaces
+//    string s;
+//    while ( getline( iss, s, ' ' ) ) {
+//        int x = stoi(s.c_str());
+//        printf( "`%d'\n", x );
+//    }
 
 //    FILE* fp = fopen("subjdata.txt", "r");    //reading from a text file
 //    if (fp == NULL)

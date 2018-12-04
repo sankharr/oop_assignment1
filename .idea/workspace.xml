@@ -13,6 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9fab2662-41ec-424d-b765-c0ae6d7f2362" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/main.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -37,34 +38,34 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="204" column="22" selection-start-line="204" selection-start-column="22" selection-end-line="204" selection-end-column="22" />
+            <state relative-caret-position="131">
+              <caret line="305" column="33" lean-forward="true" selection-start-line="305" selection-start-column="33" selection-end-line="305" selection-end-column="33" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#1064#1095#0" />
+                <element signature="e#1015#3615#0" />
                 <element signature="e#3617#4245#0" />
+                <element signature="e#4785#4814#0" />
+                <element signature="e#5552#6363#0" />
+                <element signature="e#6412#6441#0" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmake-build-debug/summdata.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="160">
               <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/c++/5/bits/ios_base.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="129" selection-start-line="129" selection-end-line="129" />
             </state>
           </provider>
         </entry>
@@ -85,6 +86,7 @@
         <option value="$PROJECT_DIR$/test.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/summdata.txt" />
       </list>
     </option>
   </component>
@@ -164,7 +166,7 @@
       <workItem from="1543767178992" duration="27984000" />
       <workItem from="1543855277384" duration="1198000" />
       <workItem from="1543886769517" duration="20970000" />
-      <workItem from="1543916105813" duration="12891000" />
+      <workItem from="1543916105813" duration="31121000" />
     </task>
     <task id="LOCAL-00001" summary="added a second prinf line just after the first one">
       <created>1543768194573</created>
@@ -201,11 +203,25 @@
       <option name="project" value="LOCAL" />
       <updated>1543925099873</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="displayStudent function for Menu option 2 added.">
+      <created>1543930147711</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1543930147711</updated>
+    </task>
+    <task id="LOCAL-00007" summary="displaySummery function for Menu option 3 added.">
+      <created>1543942182594</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1543942182594</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63043000" />
+    <option name="totallyTimeSpent" value="81273000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
@@ -216,7 +232,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2790445" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.8295331" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="5" />
@@ -230,7 +246,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Debug" order="4" visible="true" weight="0.22038421" />
+      <window_info anchor="right" id="Debug" order="4" weight="0.35592315" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -314,16 +330,13 @@
     <MESSAGE value="storingData function is ok now. it now works for different sizes of sub arrays as well.&#10;(line 101) subject_array[main_count].num_students needs to be corrected" />
     <MESSAGE value="gradeAllocation function added." />
     <MESSAGE value="displaySubject function for Menu option 1 added." />
-    <option name="LAST_COMMIT_MESSAGE" value="displaySubject function for Menu option 1 added." />
+    <MESSAGE value="displayStudent function for Menu option 2 added." />
+    <MESSAGE value="displaySummery function for Menu option 3 added." />
+    <option name="LAST_COMMIT_MESSAGE" value="displaySummery function for Menu option 3 added." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>231</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/test.cpp</url>
           <line>8</line>
@@ -332,13 +345,13 @@
         <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <condition expression="line_count &gt;= 22" language="ObjectiveC" />
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>159</line>
+          <line>167</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>232</line>
-          <option name="timeStamp" value="17" />
+          <line>347</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
         <breakpoint type="OCSymbolicBreakpointType">
           <properties>
@@ -353,9 +366,14 @@
         <watch expression="subject_array" language="ObjectiveC" />
         <watch expression="sub_count" language="ObjectiveC" />
         <watch expression="s_code" language="ObjectiveC" />
-        <watch expression="line_c" language="ObjectiveC" />
         <watch expression="subject_array[1].subject_code" />
         <watch expression="subject_array[1]" />
+        <watch expression="subject_array[found_id].num_students" />
+        <watch expression="num_A" language="ObjectiveC" />
+        <watch expression="num_B" language="ObjectiveC" />
+        <watch expression="num_C" language="ObjectiveC" />
+        <watch expression="num_D" language="ObjectiveC" />
+        <watch expression="num_F" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
@@ -409,6 +427,31 @@
     </expressions>
     <expressions id="watch">
       <expression>
+        <expression-string>num_F</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>num_D</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>num_C</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>num_B</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>num_A</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>line_c</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -448,23 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/5/bits/ios_base.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/subjdata.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
@@ -472,14 +498,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/include/c++/5/bits/ios_base.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/basic_string.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="4912" selection-start-line="4912" selection-end-line="4912" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/summdata.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="204" column="22" selection-start-line="204" selection-start-column="22" selection-end-line="204" selection-end-column="22" />
+        <state relative-caret-position="131">
+          <caret line="305" column="33" lean-forward="true" selection-start-line="305" selection-start-column="33" selection-end-line="305" selection-end-column="33" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#1064#1095#0" />
+            <element signature="e#1015#3615#0" />
             <element signature="e#3617#4245#0" />
+            <element signature="e#4785#4814#0" />
+            <element signature="e#5552#6363#0" />
+            <element signature="e#6412#6441#0" />
           </folding>
         </state>
       </provider>

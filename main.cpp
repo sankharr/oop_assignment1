@@ -3,6 +3,7 @@
 #include <sstream>
 #include <zconf.h>
 #include <math.h>
+#include <fstream>
 
 using namespace std;
 
@@ -19,6 +20,8 @@ int main_count_increment = 0;
 int sub_array_size = 10; //if you change the value here, you have to change the value in subject_struct as well.
 int main_array_size = 20;
 int option;
+float num_A = 0, num_B = 0, num_C= 0, num_D = 0, num_F = 0;       //for writeFile function
+string prev1; //for writeToFile2 function
 
 struct student{
     int student_id;
@@ -34,6 +37,7 @@ struct subject_struct{         //if this method doesnt work, you can declare a d
 
 struct subject_struct subject_array[20];
 
+
 //class subject{
 //private:
 //public:
@@ -44,6 +48,8 @@ void storingData();                     //function prototypes
 void splitting_strings(string);
 void gradeAllocation();
 void displaySubject();
+void writeFile1();
+void writeFile2(string sub_code);
 
 void gradeAllocation(){
 
@@ -230,15 +236,15 @@ void displayStudent(){
 
 }
 
-void displaySummery(){
+void displaySummery(string sub_code){
 
     int found_id = 0;
     int numA = 0, numB = 0, numC= 0, numD = 0, numF = 0;
     double total = 0, avg = 0, standard_deviation = 0, stdDevi_part = 0;
-    string sub_code;
+    //string sub_code;
     double stud_mark;
-    cout << "Enter the subject code - ";
-    cin >> sub_code;
+//    cout << "Enter the subject code - ";
+//    cin >> sub_code;
 
 
     for(int i = 0; i < 20; i++){            //This loop is used to calculate the total and the number of particular grades
@@ -297,15 +303,88 @@ void displaySummery(){
     }
 }
 
+void writeFile2(string sub_code){
+
+    prev1 = sub_code;
+    int found_id = -1;
+    num_A = 0, num_B = 0, num_C= 0, num_D = 0, num_F = 0;
+
+    for(int i = 0; i < 20; i++){            //This loop is used to calculate the total and the number of particular grades
+
+        if(subject_array[i].subject_code == sub_code){
+
+            found_id = i;
+            for(int j = 0; j < sub_array_size; j++){
+
+                if(subject_array[i].details_array[j].student_id == 0)
+                    continue;
+
+                if(subject_array[i].details_array[j].grade == 'A')
+                    num_A++;
+                else if(subject_array[i].details_array[j].grade == 'B')
+                    num_B++;
+                else if(subject_array[i].details_array[j].grade == 'C')
+                    num_C++;
+                else if(subject_array[i].details_array[j].grade == 'D')
+                    num_D++;
+                else if(subject_array[i].details_array[j].grade == 'F')
+                    num_F++;
+
+            }
+        }
+    }
+    num_A = (num_A / subject_array[found_id].num_students)*100;       //calculating the grade percentages
+    num_B = (num_B / subject_array[found_id].num_students)*100;
+    num_C = (num_C / subject_array[found_id].num_students)*100;
+    num_D = (num_D / subject_array[found_id].num_students)*100;
+    num_F = (num_F / subject_array[found_id].num_students)*100;
+
+    ofstream myfile;
+    myfile.open ("summdata.txt",ios_base::app);
+    myfile << subject_array[found_id].subject_code << " " << subject_array[found_id].num_students << " A " << num_A;
+    myfile << "% B " << num_B << "% C " << num_C << "% D " << num_D << "% F " << num_F <<"% \n";
+    myfile.close();
+
+//    cout << subject_array[found_id].subject_code;                                                                           //for testing purposes
+//    printf(" %d A %.2f% B %.2f% C %.2f% D %.2f%",subject_array[found_id].num_students,num_A,num_B,num_C,num_D);
+//    printf(" F %.2f%\n",num_F);
+
+    if (found_id == -1){
+        cout << "No results found\n";
+    }
+}
+
+void writeFile1(){
+
+    string temp;
+
+
+    for(int k = 0; k < 20; k++){
+        temp = subject_array[k].subject_code;
+        if(temp == prev1)
+            continue;
+        if(subject_array[k].num_students == 0)
+            continue;
+        writeFile2(temp);
+
+    }
+
+}
+
 int main() {
 
     storingData();
     gradeAllocation();
 
+//    displaySubject();
+//    //displayStudent();
+//
+//    string sub_code;
+//    cout << "Enter the subject code - ";
+//    cin >> sub_code;
+//    displaySummery(sub_code);
 
-    displaySubject();
-    //displayStudent();
-    displaySummery();
+    writeFile1();
 
     //cout << "Hello, World!" << endl;
 

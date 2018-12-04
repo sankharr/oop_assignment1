@@ -13,4 +13,8 @@ iostream
 -
 sstream
 -
+zconf.h
+-
+math.h
+-
 

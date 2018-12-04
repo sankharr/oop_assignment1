@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <zconf.h>
+#include <math.h>
 
 using namespace std;
 
@@ -128,7 +129,7 @@ void splitting_strings(string str) {
 
             subject_array[main_count].subject_code = s_code;
             subject_array[main_count].num_students = n_students;         //  <--------this needs to be corrected.
-
+                                                                        //if you correct the above error, then it might affect the calculation of avg in displaySummery function
             if (index_mark == 0) {
                 subject_array[main_count].details_array[sub_count % sub_array_size].student_id = str_int;
                 index_mark = 1;
@@ -229,16 +230,84 @@ void displayStudent(){
 
 }
 
+void displaySummery(){
+
+    int found_id = 0;
+    int numA = 0, numB = 0, numC= 0, numD = 0, numF = 0;
+    double total = 0, avg = 0, standard_deviation = 0, stdDevi_part = 0;
+    string sub_code;
+    double stud_mark;
+    cout << "Enter the subject code - ";
+    cin >> sub_code;
+
+
+    for(int i = 0; i < 20; i++){            //This loop is used to calculate the total and the number of particular grades
+
+        if(subject_array[i].subject_code == sub_code){
+
+            found_id = i;
+            for(int j = 0; j < sub_array_size; j++){
+
+                if(subject_array[i].details_array[j].student_id == 0)
+                    continue;
+
+                total = total + subject_array[i].details_array[j].student_mark;
+
+                if(subject_array[i].details_array[j].grade == 'A')
+                    numA++;
+                else if(subject_array[i].details_array[j].grade == 'B')
+                    numB++;
+                else if(subject_array[i].details_array[j].grade == 'C')
+                    numC++;
+                else if(subject_array[i].details_array[j].grade == 'D')
+                    numD++;
+                else if(subject_array[i].details_array[j].grade == 'F')
+                    numF++;
+
+            }
+        }
+    }
+    avg = total / subject_array[found_id].num_students;     //<---------------------------------------------This calculation will be incorrect if you correct the error which happens when assigning the num_students value in splitting_strings function
+
+    for(int i = 0; i < 20; i++){            //This loop is used to calculate the standard deviation
+
+        if(subject_array[i].subject_code == sub_code){
+
+            found_id = i;
+
+            for(int j = 0; j < sub_array_size; j++){
+
+                if(subject_array[i].details_array[j].student_id == 0)
+                    continue;
+
+                stud_mark = (double)subject_array[i].details_array[j].student_mark;
+                stdDevi_part += pow(stud_mark - avg, 2);
+
+            }
+        }
+    }
+
+    standard_deviation = sqrt(stdDevi_part/(double)subject_array[found_id].num_students);
+
+    cout << "\nAverage - " << avg << "\nStandard Deviation - " << standard_deviation <<"\nNumber of 'A's - "<< numA;
+    cout << "\nNumber of 'B's - "<< numB << "\nNumber of 'C's - "<< numC << "\nNumber of 'D's - "<< numD << "\nNumber of 'F's - "<< numF;
+
+    if (found_id == 0){
+        cout << "No results found\n";
+    }
+}
+
 int main() {
 
     storingData();
     gradeAllocation();
 
 
-    //displaySubject();
-    displayStudent();
+    displaySubject();
+    //displayStudent();
+    displaySummery();
 
-    cout << "Hello, World!" << endl;
+    //cout << "Hello, World!" << endl;
 
 //    do{
 //

@@ -84,7 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/sankharr/Dropbox/Practice/Clion/oop_assignment1/main.cpp">
+		<Unit filename="/home/sankharr/Dropbox/Practice/Clion/oop_assignment1/main2.cpp">
 			<Option target="oop_assignment1"/>
 		</Unit>
 		<Unit filename="/home/sankharr/Dropbox/Practice/Clion/oop_assignment1/CMakeLists.txt">

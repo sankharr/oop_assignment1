@@ -13,8 +13,17 @@
   <component name="ChangeListManager">
     <list default="true" id="9fab2662-41ec-424d-b765-c0ae6d7f2362" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oop_assignment1.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/oop_assignment1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/oop_assignment1.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/oop_assignment1.cbp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,25 +38,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+            <state relative-caret-position="100">
+              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.cpp">
+        <entry file="file://$PROJECT_DIR$/main2.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="305" column="33" lean-forward="true" selection-start-line="305" selection-start-column="33" selection-end-line="305" selection-end-column="33" />
+            <state relative-caret-position="1057">
+              <caret line="325" column="143" selection-start-line="325" selection-start-column="143" selection-end-line="325" selection-end-column="143" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#1064#1095#0" />
-                <element signature="e#1015#3615#0" />
-                <element signature="e#3617#4245#0" />
-                <element signature="e#4785#4814#0" />
-                <element signature="e#5552#6363#0" />
-                <element signature="e#6412#6441#0" />
+                <element signature="e#1574#2663#0" />
+                <element signature="e#2665#5045#0" />
+                <element signature="e#4786#5225#0" />
+                <element signature="e#5227#5969#0" />
+                <element signature="e#9265#11331#0" />
               </folding>
             </state>
           </provider>
@@ -84,9 +92,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/cmake-build-debug/summdata.txt" />
+        <option value="$PROJECT_DIR$/main2.cpp" />
       </list>
     </option>
   </component>
@@ -166,7 +175,8 @@
       <workItem from="1543767178992" duration="27984000" />
       <workItem from="1543855277384" duration="1198000" />
       <workItem from="1543886769517" duration="20970000" />
-      <workItem from="1543916105813" duration="31121000" />
+      <workItem from="1543916105813" duration="31461000" />
+      <workItem from="1544038416146" duration="4317000" />
     </task>
     <task id="LOCAL-00001" summary="added a second prinf line just after the first one">
       <created>1543768194573</created>
@@ -217,17 +227,23 @@
       <option name="project" value="LOCAL" />
       <updated>1543942182594</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="writeFile1() and writeFile2() for Menu Option 4 added">
+      <created>1543955869990</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1543955869990</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81273000" />
+    <option name="totallyTimeSpent" value="85930000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978261" visible="true" weight="0.12326574" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978261" weight="0.12433298" />
       <window_info id="Structure" order="1" sideWeight="0.5021739" side_tool="true" weight="0.12059765" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -332,7 +348,8 @@
     <MESSAGE value="displaySubject function for Menu option 1 added." />
     <MESSAGE value="displayStudent function for Menu option 2 added." />
     <MESSAGE value="displaySummery function for Menu option 3 added." />
-    <option name="LAST_COMMIT_MESSAGE" value="displaySummery function for Menu option 3 added." />
+    <MESSAGE value="writeFile1() and writeFile2() for Menu Option 4 added" />
+    <option name="LAST_COMMIT_MESSAGE" value="writeFile1() and writeFile2() for Menu Option 4 added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -484,13 +501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/subjdata.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
@@ -505,6 +515,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/include/c++/5/bits/basic_string.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="4912" selection-start-line="4912" selection-end-line="4912" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -515,28 +532,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/5/bits/basic_string.h">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="4912" selection-start-line="4912" selection-end-line="4912" />
+        <state relative-caret-position="100">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="305" column="32" selection-start-line="305" selection-start-column="32" selection-end-line="305" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/summdata.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/main2.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="305" column="33" lean-forward="true" selection-start-line="305" selection-start-column="33" selection-end-line="305" selection-end-column="33" />
+        <state relative-caret-position="1057">
+          <caret line="325" column="143" selection-start-line="325" selection-start-column="143" selection-end-line="325" selection-end-column="143" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#1064#1095#0" />
-            <element signature="e#1015#3615#0" />
-            <element signature="e#3617#4245#0" />
-            <element signature="e#4785#4814#0" />
-            <element signature="e#5552#6363#0" />
-            <element signature="e#6412#6441#0" />
+            <element signature="e#1574#2663#0" />
+            <element signature="e#2665#5045#0" />
+            <element signature="e#4786#5225#0" />
+            <element signature="e#5227#5969#0" />
+            <element signature="e#9265#11331#0" />
           </folding>
         </state>
       </provider>

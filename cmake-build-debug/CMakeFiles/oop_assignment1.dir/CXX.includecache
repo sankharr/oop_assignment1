@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/sankharr/Dropbox/Practice/Clion/oop_assignment1/main2.cpp
+/home/sankharr/Dropbox/Practice/Clion/oop_assignment1/17001439.cpp
 iomanip
 -
 iostream
@@ -18,5 +18,7 @@ zconf.h
 math.h
 -
 fstream
+-
+cstdlib
 -
 

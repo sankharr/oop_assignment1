@@ -11,8 +11,8 @@ using namespace std;
 const int MAXSUBJECTS = 10;
 const int MAXSTUDENTS = 100;
 
-int size; //this is declared here to be used for the details_array in "subject" struct;
-int main_count = -1; //for main_array
+int size;
+int main_count = -1;
 int sub_count = 0;
 int after_s = 0;
 int loop_count;
@@ -21,11 +21,11 @@ int str_int;
 string s_code;
 int n_students = 0;
 int main_count_increment = 0;
-int sub_array_size = MAXSTUDENTS; //if you change the value here, you have to change the value in subject_struct as well.
+int sub_array_size = MAXSTUDENTS;
 int main_array_size = MAXSUBJECTS;
 int option;
-float num_A = 0, num_B = 0, num_C= 0, num_D = 0, num_F = 0;       //for writeFile function
-string prev1; //for writeToFile2 function
+float num_A = 0, num_B = 0, num_C= 0, num_D = 0, num_F = 0;
+string prev1;
 
 class Student{              //class declarations
 
@@ -51,44 +51,48 @@ public:
     void storingData();
     void splitting_strings(string);
     void gradeAllocation();
-    void displaySubject();
-    void displayStudent();
+    friend void displaySubject();
+    friend void displayStudent();
     void displaySummery();
     void writeFile2(string sub_code);
     void writeFile1();
     void swap(int,int,int);
     void sort();
-    void quickSort(Student arr[], int, int,int);     //changed the 1st passing parameter from Subject arr[] to Student arr[]. this could be a error. if this doesnt work, try Student *arr
+    void quickSort(Student arr[], int, int,int);
     int partition(Student arr[],int,int,int);
 
 
 };
 
+/*
+ * creating the main array which is used to store all the informations related to the subjects.
+ * An element of this array contains a subject code of a particular subject, The number of students who have faced for the exam of that subject
+ * & a Student type array which contains all the informations related to each student who faced the exam of that subject.
+*/
+Subject subject_array[MAXSUBJECTS];
 
-Subject subject_array[MAXSUBJECTS];       //function prototypes
+//This function pauses the programme untill the user presses the enter key.
+void systemPause(){
+    cout << "\nPress enter key to continue........" << endl;
+    getchar();
+    getchar();
+}
 
+/*This function is called in the main function to sort out each details_array which contains the informations related to students.
+ */
 void Subject::sort(){
 
     int low,high,n;
 
     for(int k=0; k< MAXSUBJECTS; k++){
 
-        if(subject_array[k].details_array[0].student_id == 0){      //if student_id doesnt work here, change it to student mark and see
+        if(subject_array[k].details_array[0].student_id == 0){      //if the student id at the 0th index of a particular array is 0, then it means that there's no array there
 
-            return;                                                 //if the student id at the 0th index of a particular array is 0, then it means that there's no array there
-        }
-
-        for(n = 0; n < sub_array_size; n++){
-
-            if(subject_array[k].details_array[n].student_id == 0){      //if student_id doesnt work here, change it to student mark and see
-
-                break;
-                //if the student id at the 0th index of a particular array is 0, then it means that there's no array there
-            }
+            return;
         }
 
         low = 0;
-        high = n - 1;
+        high = subject_array[k].num_students - 1;
 
         quickSort(subject_array[k].details_array,low,high,k);
 
@@ -96,6 +100,7 @@ void Subject::sort(){
 
 }
 
+//This is a recursive function which finds the partitioning key.
 void Subject::quickSort(Student arr[], int low, int high, int main_number){
 
     if (low < high){
@@ -106,16 +111,19 @@ void Subject::quickSort(Student arr[], int low, int high, int main_number){
     }
 }
 
-int Subject::partition(Student arr[], int low, int high, int main_number)
-{
-    int pivot = arr[high].student_id;    // pivot
-    int i = (low - 1);  // Index of smaller element
+/*This will consider the last element of the array as the pivot element and move it to the correct position of the array according to the index number
+ * Then it will move all the elements which has lesser index numbers to the left side of pivot element, and the ones which have a higher index number will be
+ * moved to right side of the array. This is done by swapping up two elements at a time */
+int Subject::partition(Student arr[], int low, int high, int main_number){
+
+    int pivot = arr[high].student_id;
+    int i = (low - 1);
 
     for (int j = low; j <= high- 1; j++){
 
         if (arr[j].student_id <= pivot)
         {
-            i++;    // increment index of smaller element
+            i++;
             swap(main_number,i,j);
         }
     }
@@ -123,6 +131,7 @@ int Subject::partition(Student arr[], int low, int high, int main_number)
     return (i + 1);
 }
 
+/* This is the function which is used to swap two elements in the array */
 void Subject::swap(int main_number,int sub_number1,int sub_number2){
 
     int s_id = subject_array[main_number].details_array[sub_number1].student_id;
@@ -138,6 +147,7 @@ void Subject::swap(int main_number,int sub_number1,int sub_number2){
     subject_array[main_number].details_array[sub_number2].grade = grd;
 }
 
+//This is the function which allocates the particular grade to each mark that a student has got.
 void Subject::gradeAllocation(){
 
     for(int main_number = 0; main_number < MAXSUBJECTS; main_number++){
@@ -172,10 +182,11 @@ void Subject::gradeAllocation(){
     }
 }
 
-
+/*Each line which is read by the storingData function will be passed to here to separate them into strings.
+ * and then each string will be stored in the relevant position in the array */
 void Subject::splitting_strings(string str) {
 
-    istringstream iss(str);    //this code portion split up a string into different strings using spaces
+    istringstream iss(str);
     string s;
     while (getline(iss, s, ' ')) {
 
@@ -216,11 +227,13 @@ void Subject::splitting_strings(string str) {
     }
 }
 
+/*This function will read line by line from the text file which contains all the data.
+ * each line will be passed to splitting_strings function as a parameter */
 void Subject::storingData() {
 
-    int line_count = 1;         //for debugging purposes
+    int line_count = 1;
 
-    FILE* fp = fopen("subjdata2.txt", "r");    //reading from a text file
+    FILE* fp = fopen("subjdata.txt", "r");
     if (fp == NULL)
         exit(EXIT_FAILURE);
 
@@ -229,7 +242,7 @@ void Subject::storingData() {
     while ((getline(&line, &len, fp)) != -1) {
 
         splitting_strings(line);
-        line_count++;       //for debugging purposes
+        line_count++;
 
     }
 
@@ -239,9 +252,11 @@ void Subject::storingData() {
 
 }
 
-void Subject::displaySubject(){
+/*When the user enters a subject code of a particular subject,
+ * This function will show the marks and the grades each student has got for that subject */
+void displaySubject(){
 
-    int found = 0;
+    int found = -1;
     string sub_code;
     cout << "Enter the subject code - ";
     cin >> sub_code;
@@ -259,19 +274,20 @@ void Subject::displaySubject(){
         }
     }
 
-    if (found == 0){
-        cout << "No results found\n";
+    if (found == -1){
+        cout << "No results found\n\n";
     }
 }
 
-void Subject::displayStudent(){
+/*When the user enters a student id of a particular student,
+ * This function will show all the marks and the grades that this student has got for each subject*/
+void displayStudent(){
 
-    int found = 0;
+    int found = -1;
     int str_int;
 
     string stud_id;
     cout << "Enter the Student ID - ";
-    stud_id = "17000004";
     cin >> stud_id;
 
 
@@ -281,24 +297,26 @@ void Subject::displayStudent(){
 
     for(int i = 0; i < MAXSUBJECTS; i++){
 
-            for(int j = 0; j < sub_array_size; j++){
+        for(int j = 0; j < sub_array_size; j++){
 
-                if(subject_array[i].details_array[j].student_id == str_int){
+            if(subject_array[i].details_array[j].student_id == str_int){
 
-                    cout << " " << subject_array[i].subject_code << "       " << subject_array[i].details_array[j].student_mark << "       " << subject_array[i].details_array[j].grade << "\n";
-                    found = 1;
-                }
+                cout << " " << subject_array[i].subject_code << "       " << subject_array[i].details_array[j].student_mark << "       " << subject_array[i].details_array[j].grade << "\n";
+                found = 1;
             }
+        }
     }
 
     cout << "\n" << flush;
 
-    if (found == 0){
-        cout << "No results found\n";
+    if (found == -1){
+        cout << "No results found\n\n";
     }
 
 }
 
+/*When the user enters a subject code of a particular subject,
+ * This function will show the average, standard deviation and the number of grades grouped by each grade*/
 void Subject::displaySummery(){
 
     int found_id = -1;
@@ -336,7 +354,7 @@ void Subject::displaySummery(){
             }
         }
     }
-    avg = total / subject_array[found_id].num_students;     //<---------------------------------------------This calculation will be incorrect if you correct the error which happens when assigning the num_students value in splitting_strings function
+    avg = total / subject_array[found_id].num_students;
 
     for(int i = 0; i < MAXSUBJECTS; i++){            //This loop is used to calculate the standard deviation
 
@@ -366,6 +384,8 @@ void Subject::displaySummery(){
     }
 }
 
+/*This function will calculate the percentage of each grade for each subject, and then it will store them in
+ * a text file together with that relevant subject code and the number of students who did that subject */
 void Subject::writeFile2(string sub_code){
 
     prev1 = sub_code;
@@ -408,15 +428,13 @@ void Subject::writeFile2(string sub_code){
     myfile << "% B " << num_B << "% C " << num_C << "% D " << num_D << "% F " << num_F <<"% \n";
     myfile.close();
 
-//    cout << subject_array[found_id].subject_code;                                                                           //for testing purposes
-//    printf(" %d A %.2f% B %.2f% C %.2f% D %.2f%",subject_array[found_id].num_students,num_A,num_B,num_C,num_D);
-//    printf(" F %.2f%\n",num_F);
-
     if (found_id == -1){
         cout << "No results found\n";
     }
 }
 
+/*This function will loop throught the main array(subject_array) and pass one subject code at a time, to
+ *the writeFile2 function to do the necessary operations.*/
 void Subject::writeFile1(){
 
     string temp;
@@ -439,6 +457,7 @@ int main() {
     subject_array->sort();
 
     do{
+        cout << "\nPlease note that this programme will only work in a linux operating system. I never knew that there are functions which don't work properly in Windows till the last moment.\nI didn't have much time to do changes again to make it work for Windows. Sorry for the inconvenience caused.\n\n";
 
         cout << "1.Display Subject\n2.Display Student\n3.Display Subject Summary\n4.Save Summaries\n5.Exit\n\nEnter your option - ";
 
@@ -447,26 +466,30 @@ int main() {
         switch (option){
 
             case 1:
-                subject_array -> displaySubject();
+                displaySubject();
+                systemPause();
                 break;
 
             case 2:
-                subject_array -> displayStudent();
+                displayStudent();
+                systemPause();
                 break;
 
             case 3:
                 subject_array -> displaySummery();
+                systemPause();
                 break;
 
             case 4:
                 subject_array -> writeFile1();
+                systemPause();
                 break;
 
             default:
                 if(option == 5)
                     cout << "GoodBye!\n";
                 else{
-                    cout << "Invalid Input\n";
+                    cout << "Invalid Input\n\n";
                     break;
                 }        }
 
